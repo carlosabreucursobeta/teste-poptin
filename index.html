@@ -10,22 +10,14 @@
       href="https://docs.croct.com/assets/introduction/getting-started/style.css"
     />
     <script src="https://cdn.croct.io/js/v1/lib/plug.js"></script>
-    <script>
+    <!--<script>
       // Replace with your application ID
       croct.plug({ appId: "7bdbfc92-e061-4e61-b7b1-f17ae248e4b6" });
-    </script>
-    <script>
-      croct.fetch("homepage-hero").then(({ content }) => {
-        const banner = document.getElementById("hero-banner");
-        const title = banner.querySelector("h1");
-        const subtitle = banner.querySelector(".subtitle");
-        const cta = banner.querySelector(".cta");
+    </script>-->
 
-        title.textContent = content.title;
-        subtitle.textContent = content.subtitle;
-        cta.textContent = content.cta.label;
-        cta.href = content.cta.link;
-      });
+    <script src="https://cdn.croct.io/js/v1/lib/plug.js?appId=7bdbfc92-e061-4e61-b7b1-f17ae248e4b6"></script>
+    <script>
+      croct.plug();
     </script>
   </head>
   <body>
@@ -33,6 +25,20 @@
       <h1>Your static title</h1>
       <p class="subtitle">Your static subtitle.</p>
       <a class="cta" href="#">Your static CTA</a>
+
+      <script>
+        croct.fetch("homepage-hero").then(({ content }) => {
+          const banner = document.getElementById("hero-banner");
+          const title = banner.querySelector("h1");
+          const subtitle = banner.querySelector(".subtitle");
+          const cta = banner.querySelector(".cta");
+
+          title.textContent = content.title;
+          subtitle.textContent = content.subtitle;
+          cta.textContent = content.cta.label;
+          cta.href = content.cta.link;
+        });
+      </script>
     </div>
   </body>
 </html>
