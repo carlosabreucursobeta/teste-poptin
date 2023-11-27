@@ -14,13 +14,6 @@
       // Replace with your application ID
       croct.plug({ appId: "7bdbfc92-e061-4e61-b7b1-f17ae248e4b6" });
     </script>
-  </head>
-  <body>
-    <div id="hero-banner">
-      <h1></h1>
-      <p class="subtitle"></p>
-      <a class="cta" href="#"></a>
-    </div>
     <script>
       croct.fetch("homepage-hero").then(({ content }) => {
         const banner = document.getElementById("hero-banner");
@@ -34,5 +27,12 @@
         cta.href = content.cta.link;
       });
     </script>
+  </head>
+  <body>
+    <div id="hero-banner">
+      <h1>Your static title</h1>
+      <p class="subtitle">Your static subtitle.</p>
+      <a class="cta" href="#">Your static CTA</a>
+    </div>
   </body>
 </html>
